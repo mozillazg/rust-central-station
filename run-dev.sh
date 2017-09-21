@@ -3,15 +3,14 @@
 set -ex
 
 docker build \
-  --tag rust-central-station \
+  --tag homu-bot \
   --rm \
   .
 
 exec docker run \
+  --name homu-bot \
   --volume `pwd`/data:/data \
-  --volume `pwd`/data/letsencrypt:/etc/letsencrypt \
   --env DEV=1 \
-  --publish 8080:80 \
-  --rm \
-  rust-central-station \
-  "$@"
+  --publish 7942:7942 \
+  --detach \
+  homu-bot \

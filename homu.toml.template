@@ -29,178 +29,73 @@ ssh_key = """
 
 [web]
 
-host = '127.0.0.1'
+host = '0.0.0.0'
 port = 7942
 
-[repo.rust]
-owner = "rust-lang"
-name = "rust"
+[repo.rustpinyin]
+owner = "mozillazg"
+name = "rust-pinyin"
 
 # who has r+ rights?
 reviewers = [
-  "Aatch",
-  "BurntSushi",
-  "FlaPer87",
-  "GuillaumeGomez",
-  "Luqmana",
-  "Manishearth",
-  "alexcrichton",
-  "apasel422",
-  "arielb1",
-  "bkoropoff",
-  "bluss",
-  "bors",
-  "bstrie",
-  "cmr",
-  "dotdash",
-  "eddyb",
-  "erickt",
-  "estebank",
-  "frewsxcv",
-  "huonw",
-  "japaric",
-  "jdm",
-  "jonathandturner",
-  "jroesch",
-  "jseyfried",
-  "kballard",
-  "kimundi",
-  "kmcallister",
-  "michaelwoerister",
-  "nikomatsakis",
-  "nrc",
-  "pcwalton",
-  "petrochenkov",
-  "pnkfelix",
-  "sanxiyn",
-  "sfackler",
-  "steveklabnik",
-  "vadimcn",
-  "aturon",
-  "TimNN",
-  "carols10cents",
-  "nagisa",
-  "Kimundi",
-  "shepmaster",
-  "Mark-Simulacrum",
-  "aidanhs",
-  "dtolnay",
-  "QuietMisdreavus",
+  "mozillazg",
 ]
 
 # who has 'try' rights? (try, retry, force, clean, prioritization)
 try_users = [
-  "est31",
-  "tomprince",
-  "kennytm",
+  "mozillazg",
 ]
 
-[repo.rust.github]
-secret = "{{ homu.repo-secrets.rust }}"
-[repo.rust.status.travis]
-context = "continuous-integration/travis-ci/push"
-[repo.rust.status.appveyor]
-context = "continuous-integration/appveyor/branch"
-try = false
+[repo.rustpinyin.github]
+secret = "{{ homu.repo-secrets.rustpinyin }}"
+[repo.rustpinyin.status.travis]
+# context = "continuous-integration/travis-ci/push"
+# # [repo.rustpinyin.status.appveyor]
+# # context = "continuous-integration/appveyor/branch"
+# try = false
 
 
-[repo.cargo]
-owner = "rust-lang"
-name = "cargo"
+[repo.pythonpinyin]
+owner = "mozillazg"
+name = "python-pinyin"
+
+# who has r+ rights?
 reviewers = [
-  "alexcrichton",
-  "wycats",
-  "carllerche",
-  "huonw",
-  "steveklabnik",
-  "matklad",
-  "Mark-Simulacrum",
+  "mozillazg",
 ]
-try_users = []
-[repo.cargo.branch]
-auto = "auto-cargo"
-[repo.cargo.github]
-secret = "{{ homu.repo-secrets.cargo }}"
-[repo.cargo.status.travis]
-context = "continuous-integration/travis-ci/push"
-[repo.cargo.status.appveyor]
-context = "continuous-integration/appveyor/branch"
 
-[repo.libc]
-owner = "rust-lang"
-name = "libc"
+# who has 'try' rights? (try, retry, force, clean, prioritization)
+try_users = [
+  "mozillazg",
+]
+
+[repo.pythonpinyin.github]
+secret = "{{ homu.repo-secrets.pythonpinyin }}"
+[repo.pythonpinyin.status.travis]
+# context = "continuous-integration/travis-ci/push"
+# # [repo.pythonpinyin.status.appveyor]
+# # context = "continuous-integration/appveyor/branch"
+# try = false
+
+
+[repo.gopinyin]
+owner = "mozillazg"
+name = "go-pinyin"
+
+# who has r+ rights?
 reviewers = [
-  "alexcrichton",
+  "mozillazg",
 ]
-try_users = []
 
-[repo.libc.branch]
-auto = "auto-libc"
-
-[repo.libc.github]
-secret = "{{ homu.repo-secrets.libc }}"
-
-[repo.libc.status.travis]
-context = "continuous-integration/travis-ci/push"
-[repo.libc.status.appveyor]
-context = "continuous-integration/appveyor/branch"
-
-[repo.rustup-rs]
-owner = "rust-lang-nursery"
-name = "rustup.rs"
-reviewers = [
-  "alexcrichton",
-  "Diggsey",
-  "nrc",
+# who has 'try' rights? (try, retry, force, clean, prioritization)
+try_users = [
+  "mozillazg",
 ]
-try_users = []
 
-[repo.rustup-rs.branch]
-auto = "auto"
-
-[repo.rustup-rs.github]
-secret = "{{ homu.repo-secrets.rustup }}"
-
-[repo.rustup-rs.status.travis]
-context = "continuous-integration/travis-ci/push"
-[repo.rustup-rs.status.appveyor]
-context = "continuous-integration/appveyor/branch"
-
-[repo.compiler-builtins]
-owner = "rust-lang-nursery"
-name = "compiler-builtins"
-reviewers = [
-  "alexcrichton",
-  "japaric",
-  "Amanieu",
-]
-try_users = []
-
-[repo.compiler-builtins.branch]
-auto = "auto"
-
-[repo.compiler-builtins.github]
-secret = "{{ homu.repo-secrets.compiler-builtins }}"
-
-[repo.compiler-builtins.status.travis]
-context = "continuous-integration/travis-ci/push"
-[repo.compiler-builtins.status.appveyor]
-context = "continuous-integration/appveyor/branch"
-
-
-[repo.regex]
-owner = "rust-lang"
-name = "regex"
-reviewers = [
-  "BurntSushi",
-]
-try_users = []
-
-[repo.regex.branch]
-auto = "auto"
-[repo.regex.github]
-secret = "{{ homu.repo-secrets.regex }}"
-[repo.regex.status.travis]
-context = "continuous-integration/travis-ci/push"
-[repo.regex.status.appveyor]
-context = "continuous-integration/appveyor/branch"
+[repo.gopinyin.github]
+secret = "{{ homu.repo-secrets.gopinyin }}"
+[repo.gopinyin.status.travis]
+# context = "continuous-integration/travis-ci/push"
+# # [repo.gopinyin.status.appveyor]
+# # context = "continuous-integration/appveyor/branch"
+# try = false

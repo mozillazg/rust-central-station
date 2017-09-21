@@ -2,15 +2,14 @@
 
 set -ex
 
-docker pull alexcrichton/rust-central-station
+docker pull mozillazg/homu-bot
 
 mkdir -p data/logs/nginx
 exec docker run \
+  --name homu-bot \
   --volume `pwd`/data:/data \
-  --volume `pwd`/data/letsencrypt:/etc/letsencrypt \
   --volume `pwd`/data/logs:/var/log \
-  --publish 80:80 \
-  --publish 443:443 \
+  --publish 7942:7942 \
   --rm \
   --detach \
-  alexcrichton/rust-central-station
+  mozillazg/homu-bot
