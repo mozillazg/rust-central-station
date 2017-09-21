@@ -49,7 +49,7 @@ try_users = [
 [repo.rustpinyin.github]
 secret = "{{ homu.repo-secrets.rustpinyin }}"
 [repo.rustpinyin.status.travis]
-# context = "continuous-integration/travis-ci/push"
+context = "continuous-integration/travis-ci/push"
 # # [repo.rustpinyin.status.appveyor]
 # # context = "continuous-integration/appveyor/branch"
 # try = false
@@ -72,7 +72,7 @@ try_users = [
 [repo.pythonpinyin.github]
 secret = "{{ homu.repo-secrets.pythonpinyin }}"
 [repo.pythonpinyin.status.travis]
-# context = "continuous-integration/travis-ci/push"
+context = "continuous-integration/travis-ci/push"
 # # [repo.pythonpinyin.status.appveyor]
 # # context = "continuous-integration/appveyor/branch"
 # try = false
@@ -95,7 +95,30 @@ try_users = [
 [repo.gopinyin.github]
 secret = "{{ homu.repo-secrets.gopinyin }}"
 [repo.gopinyin.status.travis]
-# context = "continuous-integration/travis-ci/push"
+context = "continuous-integration/travis-ci/push"
 # # [repo.gopinyin.status.appveyor]
+# # context = "continuous-integration/appveyor/branch"
+# try = false
+
+
+[repo.testrepo]
+owner = "mozillazg"
+name = "test-repo"
+
+# who has r+ rights?
+reviewers = [
+  "mozillazg",
+]
+
+# who has 'try' rights? (try, retry, force, clean, prioritization)
+try_users = [
+  "mozillazg",
+]
+
+[repo.testrepo.github]
+secret = "{{ homu.repo-secrets.testrepo }}"
+[repo.testrepo.status.travis]
+context = "continuous-integration/travis-ci/push"
+# # [repo.testrepo.status.appveyor]
 # # context = "continuous-integration/appveyor/branch"
 # try = false

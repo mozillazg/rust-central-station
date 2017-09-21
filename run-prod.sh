@@ -11,5 +11,6 @@ exec docker run \
   --volume `pwd`/data/logs:/var/log \
   --publish 7942:7942 \
   --rm \
+  --tty \
   --detach \
   mozillazg/homu-bot
